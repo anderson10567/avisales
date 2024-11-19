@@ -245,5 +245,17 @@ export const ticketsSlice = createSlice({
   },
 })
 
+export const {
+  sortCheap,
+  sortFast,
+  sliceTickets,
+  filtersTickets,
+  sortTickets,
+  sortAll,
+  sortWithout,
+  sortOne,
+  sortTwo,
+  sortThree,
+} = ticketsSlice.actions
 export const searchIdReducer = searchIdSlice.reducer
 export const ticketReducer = ticketsSlice.reducer

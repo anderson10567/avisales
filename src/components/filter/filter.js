@@ -10,19 +10,17 @@ const Filter = () => {
   const dispatch = useDispatch()
   const sliceNumber = useSelector((state) => state.tickets.sliceNumber)
   const isLoading = useSelector((state) => state.tickets.isLoading)
-
   const onChangeFilter = ({ target: { value } }) => {
     if (value === 'САМЫЙ ДЕШЁВЫЙ') {
-      dispatch(reducers.ticketsSlice.actions.sortCheap())
-      dispatch(reducers.ticketsSlice.actions.filtersTickets())
-      dispatch(reducers.ticketsSlice.actions.sortTickets())
-      dispatch(reducers.ticketsSlice.actions.sliceTickets(sliceNumber || 5))
-    }
-    if (value === 'САМЫЙ БЫСТРЫЙ') {
-      dispatch(reducers.ticketsSlice.actions.sortFast())
-      dispatch(reducers.ticketsSlice.actions.filtersTickets())
-      dispatch(reducers.ticketsSlice.actions.sortTickets())
-      dispatch(reducers.ticketsSlice.actions.sliceTickets(sliceNumber || 5))
+      dispatch(reducers.sortCheap())
+      dispatch(reducers.filtersTickets())
+      dispatch(reducers.sortTickets())
+      dispatch(reducers.sliceTickets(sliceNumber || 5))
+    } else if (value === 'САМЫЙ БЫСТРЫЙ') {
+      dispatch(reducers.sortFast())
+      dispatch(reducers.filtersTickets())
+      dispatch(reducers.sortTickets())
+      dispatch(reducers.sliceTickets(sliceNumber || 5))
     }
   }
   const radioOptions = [

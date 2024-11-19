@@ -11,7 +11,7 @@ const ShowMoreButton = () => {
   const arrayTickets = useSelector((state) => state.tickets.arrayTickets)
 
   const handleButton = () => {
-    dispatch(reducers.ticketsSlice.actions.sliceTickets())
+    dispatch(reducers.sliceTickets())
   }
   return (
     <div className={classes.container}>

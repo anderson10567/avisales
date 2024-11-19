@@ -16,16 +16,21 @@ const Ticket = ({ ticket }) => {
     }
     return duration
   }
+
   const setStops = (num) => {
     let stop
-    if (num === 0) {
-      stop = 'БЕЗ ПЕРЕСАДОК'
-    } else if (num === 1) {
-      stop = `${num} ПЕРЕСАДКА`
-    } else if (num > 1 && num < 5) {
-      stop = `${num} ПЕРЕСАДКИ`
-    } else if (num >= 5) {
-      stop = `${num} ПЕРЕСАДОК`
+    switch (num) {
+      case num === 0:
+        stop = 'БЕЗ ПЕРЕСАДОК'
+        break
+      case num === 1:
+        stop = `${num} ПЕРЕСАДКА`
+        break
+      case num > 1 && num < 5:
+        stop = `${num} ПЕРЕСАДКИ`
+        break
+      default:
+        stop = `${num} ПЕРЕСАДОК`
     }
     return stop
   }

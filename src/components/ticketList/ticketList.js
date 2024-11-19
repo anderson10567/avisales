@@ -22,14 +22,14 @@ const TicketList = () => {
   const arrayTickets = useSelector((state) => state.tickets.arrayTickets)
   useEffect(() => {
     dispatch(reducers.fetchSearchId())
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     if (searchId && !stop) {
       dispatch(reducers.fetchTicketsThunk(searchId))
-      dispatch(reducers.ticketsSlice.actions.filtersTickets())
-      dispatch(reducers.ticketsSlice.actions.sortTickets())
-      dispatch(reducers.ticketsSlice.actions.sliceTickets(sliceNumber || 5))
+      dispatch(reducers.filtersTickets())
+      dispatch(reducers.sortTickets())
+      dispatch(reducers.sliceTickets(sliceNumber || 5))
     }
   }, [searchId, tickets, dispatch, stop, sliceNumber])
 

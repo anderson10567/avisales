@@ -15,29 +15,29 @@ const Sort = () => {
   const dispatch = useDispatch()
 
   const handleSortAll = () => {
-    dispatch(reducers.ticketsSlice.actions.sortAll())
-    dispatch(reducers.ticketsSlice.actions.filtersTickets())
-    dispatch(reducers.ticketsSlice.actions.sortTickets())
+    dispatch(reducers.sortAll())
+    dispatch(reducers.filtersTickets())
+    dispatch(reducers.sortTickets())
   }
   const handleSortWithout = () => {
-    dispatch(reducers.ticketsSlice.actions.sortWithout())
-    dispatch(reducers.ticketsSlice.actions.filtersTickets())
-    dispatch(reducers.ticketsSlice.actions.sortTickets())
+    dispatch(reducers.sortWithout())
+    dispatch(reducers.filtersTickets())
+    dispatch(reducers.sortTickets())
   }
   const handleSortrOne = () => {
-    dispatch(reducers.ticketsSlice.actions.sortOne())
-    dispatch(reducers.ticketsSlice.actions.filtersTickets())
-    dispatch(reducers.ticketsSlice.actions.sortTickets())
+    dispatch(reducers.sortOne())
+    dispatch(reducers.filtersTickets())
+    dispatch(reducers.sortTickets())
   }
   const handleSortTwo = () => {
-    dispatch(reducers.ticketsSlice.actions.sortTwo())
-    dispatch(reducers.ticketsSlice.actions.filtersTickets())
-    dispatch(reducers.ticketsSlice.actions.sortTickets())
+    dispatch(reducers.sortTwo())
+    dispatch(reducers.filtersTickets())
+    dispatch(reducers.sortTickets())
   }
   const handleSortThree = () => {
-    dispatch(reducers.ticketsSlice.actions.sortThree())
-    dispatch(reducers.ticketsSlice.actions.filtersTickets())
-    dispatch(reducers.ticketsSlice.actions.sortTickets())
+    dispatch(reducers.sortThree())
+    dispatch(reducers.filtersTickets())
+    dispatch(reducers.sortTickets())
   }
 
   return (
