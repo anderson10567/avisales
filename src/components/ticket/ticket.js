@@ -4,16 +4,32 @@ import { nanoid } from 'nanoid'
 import classes from './ticket.module.scss'
 
 const Ticket = ({ ticket }) => {
+  // const setTime = (mins) => {
+  //   let duration
+  //   if (mins < 60) {
+  //     duration = `${mins}м`
+  //   } else if (mins % 60 === 0) {
+  //     duration = `${mins / 60}ч`
+  //   } else if (mins % 60 !== 0) {
+  //     const hours = Math.floor(mins / 60)
+  //     duration = `${hours}ч ${mins - hours * 60}м`
+  //   }
+  //   return duration
+  // }
+
   const setTime = (mins) => {
     let duration
-    if (mins < 60) {
-      duration = `${mins}м`
-    } else if (mins % 60 === 0) {
-      duration = `${mins / 60}ч`
-    } else if (mins % 60 !== 0) {
-      const hours = Math.floor(mins / 60)
-      duration = `${hours}ч ${mins - hours * 60}м`
-    }
+    switch (mins) {
+      case mins < 60:
+        duration = `${mins}м`
+        break
+      case mins % 60 === 0:
+        duration = `${Math.floor(mins / 60)}ч`
+        break
+      default:{
+        const hours = Math.floor(mins / 60)
+        duration = `${hours}ч ${mins - hours * 60}м`
+    }}
     return duration
   }
 
